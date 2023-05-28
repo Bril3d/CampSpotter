@@ -42,4 +42,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function clubs()
+{
+    return $this->belongsToMany(Club::class, 'user_club', 'user_id', 'club_id');
+}
 }
